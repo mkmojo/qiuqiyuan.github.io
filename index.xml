@@ -6,9 +6,22 @@
     <description>Recent content on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Thu, 09 Jan 2014 14:26:20 -0500</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A Tutorial on Python Function Calls</title>
+      <link>http://localhost:1313/post/five-minute-tutorial-for-python-functions/</link>
+      <pubDate>Thu, 09 Jan 2014 14:26:20 -0500</pubDate>
+      
+      <guid>http://localhost:1313/post/five-minute-tutorial-for-python-functions/</guid>
+      <description>This tutorial gives you a quick overview of how Python handles function calls.
+The Python program we are going to examine is:
+1 2 3 4  def add(x, y): return x + y print add(1,2)   Corresponding bytecode for the above source is:
+1 2 3 4 5 6 7 8 9 10 11 12 13  python -m dis test.py 1 0 LOAD_CONST 0 (&amp;lt;code object add at 0x6ffffe2fa30, file &amp;#34;test.</description>
+    </item>
     
   </channel>
 </rss>
