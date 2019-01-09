@@ -17,9 +17,7 @@
 
 
 <meta name="author" content="mqiu" /><meta name="description" content="This tutorial gives you a quick overview of how Python handles function calls.
-The Python program we are going to examine is:
-1 2 3 4  def add(x, y): return x &#43; y print add(1,2)   Corresponding bytecode for the above source is:
-1 2 3 4 5 6 7 8 9 10 11 12 13  python -m dis test.py 1 0 LOAD_CONST 0 (&amp;lt;code object add at 0x6ffffe2fa30, file &amp;#34;test." /><meta name="keywords" content="A-ha, personal, thoughts" />
+" /><meta name="keywords" content="A-ha, personal, thoughts" />
 
 
 
@@ -42,19 +40,13 @@ The Python program we are going to examine is:
 
 
 <meta property="og:title" content="A Tutorial on Python Function Calls" />
-<meta property="og:description" content="This tutorial gives you a quick overview of how Python handles function calls.
-The Python program we are going to examine is:
-1 2 3 4  def add(x, y): return x &#43; y print add(1,2)   Corresponding bytecode for the above source is:
-1 2 3 4 5 6 7 8 9 10 11 12 13  python -m dis test.py 1 0 LOAD_CONST 0 (&lt;code object add at 0x6ffffe2fa30, file &#34;test." />
+<meta property="og:description" content="This tutorial gives you a quick overview of how Python handles function calls." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/five-minute-tutorial-for-python-functions/" /><meta property="article:published_time" content="2014-01-09T14:26:20-05:00"/>
 <meta property="article:modified_time" content="2014-01-09T14:26:20-05:00"/>
 
 <meta itemprop="name" content="A Tutorial on Python Function Calls">
-<meta itemprop="description" content="This tutorial gives you a quick overview of how Python handles function calls.
-The Python program we are going to examine is:
-1 2 3 4  def add(x, y): return x &#43; y print add(1,2)   Corresponding bytecode for the above source is:
-1 2 3 4 5 6 7 8 9 10 11 12 13  python -m dis test.py 1 0 LOAD_CONST 0 (&lt;code object add at 0x6ffffe2fa30, file &#34;test.">
+<meta itemprop="description" content="This tutorial gives you a quick overview of how Python handles function calls.">
 
 
 <meta itemprop="datePublished" content="2014-01-09T14:26:20-05:00" />
@@ -66,10 +58,7 @@ The Python program we are going to examine is:
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="A Tutorial on Python Function Calls"/>
-<meta name="twitter:description" content="This tutorial gives you a quick overview of how Python handles function calls.
-The Python program we are going to examine is:
-1 2 3 4  def add(x, y): return x &#43; y print add(1,2)   Corresponding bytecode for the above source is:
-1 2 3 4 5 6 7 8 9 10 11 12 13  python -m dis test.py 1 0 LOAD_CONST 0 (&lt;code object add at 0x6ffffe2fa30, file &#34;test."/>
+<meta name="twitter:description" content="This tutorial gives you a quick overview of how Python handles function calls."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -155,9 +144,7 @@ The Python program we are going to examine is:
   </div>
 </div>
     <div class="post-content">
-      
-
-<p>This tutorial gives you a quick overview of how Python handles function calls.</p>
+      <p>This tutorial gives you a quick overview of how Python handles function calls.</p>
 
 <p>The Python program we are going to examine is:</p>
 <div class="highlight"><div class="chroma">
@@ -562,7 +549,6 @@ will have its <code>fun.func_closure</code> set with tuple <code>(x, y, z)</code
 <p>Notice that here, <code>PyFunctionObject.func_global</code> kicks in. A Function Object knows what the global space is for some Code Object. Code Objects themselves need not worry about its globals.</p>
 
 <p>PyFrameObject is pretty much like the Functions and their contexts all together as a whole that gets executed by the Python VM.</p>
-
     </div>
 
     <div class="post-copyright">
