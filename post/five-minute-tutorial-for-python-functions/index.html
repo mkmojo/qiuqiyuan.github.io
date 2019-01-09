@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>A Tutorial on Python Function Calls - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="This tutorial gives you a quick overview of how Python handles function calls.
+The Python program we are going to examine is:
+1 2 3 4  def add(x, y): return x &#43; y print add(1,2)   Corresponding bytecode for the above source is:
+1 2 3 4 5 6 7 8 9 10 11 12 13  python -m dis test.py 1 0 LOAD_CONST 0 (&amp;lt;code object add at 0x6ffffe2fa30, file &amp;#34;test." /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.53 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://qiuqiyuan.github.io/post/five-minute-tutorial-for-python-functions/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.bda73fe8.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="A Tutorial on Python Function Calls" />
+<meta property="og:description" content="This tutorial gives you a quick overview of how Python handles function calls.
+The Python program we are going to examine is:
+1 2 3 4  def add(x, y): return x &#43; y print add(1,2)   Corresponding bytecode for the above source is:
+1 2 3 4 5 6 7 8 9 10 11 12 13  python -m dis test.py 1 0 LOAD_CONST 0 (&lt;code object add at 0x6ffffe2fa30, file &#34;test." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://qiuqiyuan.github.io/post/five-minute-tutorial-for-python-functions/" /><meta property="article:published_time" content="2014-01-09T14:26:20-05:00"/>
+<meta property="article:modified_time" content="2014-01-09T14:26:20-05:00"/>
+
+<meta itemprop="name" content="A Tutorial on Python Function Calls">
+<meta itemprop="description" content="This tutorial gives you a quick overview of how Python handles function calls.
+The Python program we are going to examine is:
+1 2 3 4  def add(x, y): return x &#43; y print add(1,2)   Corresponding bytecode for the above source is:
+1 2 3 4 5 6 7 8 9 10 11 12 13  python -m dis test.py 1 0 LOAD_CONST 0 (&lt;code object add at 0x6ffffe2fa30, file &#34;test.">
+
+
+<meta itemprop="datePublished" content="2014-01-09T14:26:20-05:00" />
+<meta itemprop="dateModified" content="2014-01-09T14:26:20-05:00" />
+<meta itemprop="wordCount" content="2042">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A Tutorial on Python Function Calls"/>
+<meta name="twitter:description" content="This tutorial gives you a quick overview of how Python handles function calls.
+The Python program we are going to examine is:
+1 2 3 4  def add(x, y): return x &#43; y print add(1,2)   Corresponding bytecode for the above source is:
+1 2 3 4 5 6 7 8 9 10 11 12 13  python -m dis test.py 1 0 LOAD_CONST 0 (&lt;code object add at 0x6ffffe2fa30, file &#34;test."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Even</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">A Tutorial on Python Function Calls</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2014-01-09 </span>
+        
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#bytecode-walkthrough">Bytecode Walkthrough</a></li>
+<li><a href="#make-function-walkthrough"><code>MAKE_FUNCTION</code> Walkthrough</a></li>
+<li><a href="#call-function-walkthrough"><code>CALL_FUNCTION</code> Walkthrough</a></li>
+<li><a href="#extended-discussion-pyframeobject-vs-pyfunctionobject-vs-pycodeobject">Extended Discussion: PyFrameObject vs PyFunctionObject vs PyCodeObject</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>This tutorial gives you a quick overview of how Python handles function calls.</p>
+
+<p>The Python program we are going to examine is:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="k">print</span> <span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Corresponding bytecode for the above source is:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">python -m dis test.py
+  1           0 LOAD_CONST               0 (&lt;code object add at 0x6ffffe2fa30, file &#34;test.py&#34;, line 1&gt;)
+              3 MAKE_FUNCTION            0
+              6 STORE_NAME               0 (add)
+
+  4           9 LOAD_NAME                0 (add)
+             12 LOAD_CONST               1 (1)
+             15 LOAD_CONST               2 (2)
+             18 CALL_FUNCTION            2
+             21 PRINT_ITEM
+             22 PRINT_NEWLINE
+             23 LOAD_CONST               3 (None)
+             26 RETURN_VALUE</pre></td></tr></table>
+</div>
+</div>
+<p>The disassembled bytecode of the code object on line 1 above is:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python">          <span class="mi">0</span> <span class="n">LOAD_FAST</span>           <span class="mi">0</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+          <span class="mi">3</span> <span class="n">LOAD_FAST</span>           <span class="mi">1</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+          <span class="mi">6</span> <span class="n">BINARY_ADD</span>
+          <span class="mi">7</span> <span class="n">RETURN_VALUE</span></code></pre></td></tr></table>
+</div>
+</div>
+<h1 id="bytecode-walkthrough">Bytecode Walkthrough</h1>
+
+<p>Starting from the function definition:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">dis</span> <span class="n">test</span><span class="o">.</span><span class="n">py</span>
+  <span class="mi">1</span>           <span class="mi">0</span> <span class="n">LOAD_CONST</span>               <span class="mi">0</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">code</span> <span class="nb">object</span> <span class="n">add</span> <span class="n">at</span> <span class="mh">0x6ffffe2fa30</span><span class="p">,</span> <span class="nb">file</span> <span class="s2">&#34;test.py&#34;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="o">&gt;</span><span class="p">)</span>
+              <span class="mi">3</span> <span class="n">MAKE_FUNCTION</span>            <span class="mi">0</span>          <span class="o">//</span><span class="n">Elaborated</span> <span class="ow">in</span> <span class="n">later</span> <span class="n">section</span> <span class="n">MAKE_FUNCTION</span> <span class="n">Walkthrough</span>
+              <span class="mi">6</span> <span class="n">STORE_NAME</span>               <span class="mi">0</span> <span class="p">(</span><span class="n">add</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>The Python interpreter makes a <code>PyCodeObject</code> and loads it to the value stack.</p>
+
+<p>Then it creates a <code>PyFunctionObject</code> out of the <code>PyCodeObject</code> on the value stack and leaves a <code>PyFunctionObject</code> on
+the value stack.</p>
+
+<p>Then it binds the name <code>add</code> with the <code>PyFunctionObject</code> and pops the <code>PyFunctionObject</code> off the value stack.</p>
+
+<p>At the moment of calling the function:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python">  <span class="mi">4</span>           <span class="mi">9</span> <span class="n">LOAD_NAME</span>                <span class="mi">0</span> <span class="p">(</span><span class="n">add</span><span class="p">)</span>
+             <span class="mi">12</span> <span class="n">LOAD_CONST</span>               <span class="mi">1</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+             <span class="mi">15</span> <span class="n">LOAD_CONST</span>               <span class="mi">2</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+             <span class="mi">18</span> <span class="n">CALL_FUNCTION</span>            <span class="mi">2</span>          <span class="o">//</span><span class="n">Elaborated</span> <span class="ow">in</span> <span class="n">later</span> <span class="n">section</span> <span class="n">CALL_FUNCTION</span> <span class="n">Walkthrough</span>
+             <span class="mi">21</span> <span class="n">PRINT_ITEM</span>
+             <span class="mi">22</span> <span class="n">PRINT_NEWLINE</span>
+             <span class="mi">23</span> <span class="n">LOAD_CONST</span>               <span class="mi">3</span> <span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+             <span class="mi">26</span> <span class="n">RETURN_VALUE</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>The Python interpreter loads the function name ( in our case <code>add</code> ) and two arguments ( in our case <code>1</code> and <code>2</code> ) to
+the value satck.</p>
+
+<p>Then the interpreter follows <code>CALL_FUNCTION</code> to make a <code>PyFrameObject</code> out of the <code>PyFunctionObject</code> with the name <code>add</code>
+and evaluates it in <code>ceval.c</code>&rsquo;s main loop. The bytecode finishes by putting a returned Object on to the value stack. In
+our case <code>CALL_FUNCTION</code> puts a <code>PyIntObject</code> (whose value slot is set to 3) on to the value stack.</p>
+
+<p>The <code>PRINT_ITEM</code> bytecode tells the Python Interpreter to pop the <code>PyIntObject</code> off of the value stack and
+print its value to standard output and <code>PRINT_NEWLINE</code> prints out a newline character.</p>
+
+<p>Python interpreter then loads in the <code>None</code> PyObject to the value stack so that it could be used by the following
+<code>RETURN_VALUE</code> bytecode.</p>
+
+<p>At last, the <code>RETURN_VALUE</code> bytecode instructs the Python interpreter to return the top of the stack object
+(which in our case is the PyIntObject we loaded in from <code>LOAD_CONSTANT</code>) to the caller.</p>
+
+<p>The most interesting parts of the above bytecode are <code>MAKE_FUNCTION</code> and <code>CALL_FUNCTION</code>. We are going to elaborate on them individually below.</p>
+
+<h1 id="make-function-walkthrough"><code>MAKE_FUNCTION</code> Walkthrough</h1>
+
+<p>The key to this entire process is the <code>MAKE_FUNCTION</code> opcode, whose logic is like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-C" data-lang="C"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-C" data-lang="C"><span class="k">case</span> <span class="nl">MAKE_FUNCTION</span><span class="p">:</span>
+     <span class="n">v</span> <span class="o">=</span> <span class="n">POP</span><span class="p">();</span>	                                <span class="c1">// PyCodeObject
+</span><span class="c1"></span>     <span class="n">x</span> <span class="o">=</span> <span class="n">PyFunction_New</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">f</span><span class="o">-&gt;</span><span class="n">f_globals</span><span class="p">);</span>       <span class="c1">// Make a function out of code object and global variables
+</span><span class="c1"></span>     <span class="p">...</span>                                        
+     <span class="n">PUSH</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>                                   <span class="c1">// Put PyFunctionObject back to the value stack
+</span><span class="c1"></span>     <span class="k">break</span><span class="p">;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>The line <code>x = PyFunction_New(v, f-&gt;f_globals);</code> is the most interesting one. Combined with the Load and Store opcodes you can see right away due to how pythons internals are written what&rsquo;s happening, we&rsquo;re creating a Function Object using the Code Object we just loaded as well as the globals from the frame we&rsquo;re currently executing. You can see this functions full code in <code>Objects\funcobject.c</code> to get a full view of implementation, but overall we&rsquo;re initializing a Function Object with a pointer to the Code Object so we can at a later point actually execute the bytecode when calling the function.</p>
+
+<h1 id="call-function-walkthrough"><code>CALL_FUNCTION</code> Walkthrough</h1>
+
+<p>So now we&rsquo;re left with our Function Object on top of the value stack, now it&rsquo;s time to actually execute the function passing in our parameters and do some work with it.</p>
+
+<p>The main interesting bit of the above is in executing <code>CALL_FUNCTION</code> when the following call <code>x = call_function(&amp;sp, oparg);</code> is made. Notice that we pass in the current stack pointer from the executing frame by reference, this will come into play later on.</p>
+
+<p>The implementation of <code>call_function</code> is the following:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-C" data-lang="C"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-C" data-lang="C"><span class="k">static</span> <span class="n">PyObject</span> <span class="o">*</span>
+<span class="nf">call_function</span><span class="p">(</span><span class="n">PyObject</span> <span class="o">***</span><span class="n">pp_stack</span><span class="p">,</span> <span class="kt">int</span> <span class="n">oparg</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">na</span> <span class="o">=</span> <span class="n">oparg</span> <span class="o">&amp;</span> <span class="mh">0xff</span><span class="p">;</span> 			            <span class="c1">//Get the number of arguments
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="n">nk</span> <span class="o">=</span> <span class="p">(</span><span class="n">oparg</span><span class="o">&gt;&gt;</span><span class="mi">8</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xff</span><span class="p">;</span>			        <span class="c1">//Keyword number occupies higher order bits, 0 in our case
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">na</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">nk</span><span class="p">;</span>				        <span class="c1">//n is the &#39;space&#39; on the value stack that concerns this call
+</span><span class="c1"></span>    <span class="n">PyObject</span> <span class="o">**</span><span class="n">pfunc</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">pp_stack</span><span class="p">)</span> <span class="o">-</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>	    <span class="c1">//Get a pointer to the function object
+</span><span class="c1"></span>    <span class="n">PyObject</span> <span class="o">*</span><span class="n">func</span> <span class="o">=</span> <span class="o">*</span><span class="n">pfunc</span><span class="p">;</span>			        <span class="c1">//Retrieve the actual function object
+</span><span class="c1"></span>    <span class="n">PyObject</span> <span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">w</span><span class="p">;</span>
+    <span class="p">...</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">PyCFunction_Check</span><span class="p">(</span><span class="n">func</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">nk</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="p">...</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">PyFunction_Check</span><span class="p">(</span><span class="n">func</span><span class="p">))</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">fast_function</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">pp_stack</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">na</span><span class="p">,</span> <span class="n">nk</span><span class="p">);</span>       <span class="c1">// We end up calling this
+</span><span class="c1"></span>        <span class="k">else</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">do_call</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">pp_stack</span><span class="p">,</span> <span class="n">na</span><span class="p">,</span> <span class="n">nk</span><span class="p">);</span>
+        <span class="n">READ_TIMESTAMP</span><span class="p">(</span><span class="o">*</span><span class="n">pintr1</span><span class="p">);</span>
+        <span class="n">Py_DECREF</span><span class="p">(</span><span class="n">func</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="p">...</span>                                                         <span class="c1">// Some clean up
+</span><span class="c1"></span>    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>First we&rsquo;re defining some values, these values are used to figure out the position the stack pointer should point to based on
+number of arguments for the function object as well as getting a handle to our <code>PyFunctionObject</code>.</p>
+
+<p>The interpreter does a couple of checks immediately in order to find out if the function is a Python wrapper for a c function or a Method object since these are the most common calls made, our function is just a straight forward <code>PyFunctionObject</code>, so we execute the branch of code that calls <code>x = fast_function(func, pp_stack, n, na, nk);</code> which is also in <code>ceval.c</code>.</p>
+
+<p>In the call to <code>fast_function</code>, the interpreter first sets things up, commented below.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-C" data-lang="C"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-C" data-lang="C">    <span class="n">PyCodeObject</span> <span class="o">*</span><span class="n">co</span> <span class="o">=</span> <span class="p">(</span><span class="n">PyCodeObject</span> <span class="o">*</span><span class="p">)</span><span class="n">PyFunction_GET_CODE</span><span class="p">(</span><span class="n">func</span><span class="p">);</span>	<span class="c1">//Get a pointer to the Code Object
+</span><span class="c1"></span>    <span class="n">PyObject</span> <span class="o">*</span><span class="n">globals</span> <span class="o">=</span> <span class="n">PyFunction_GET_GLOBALS</span><span class="p">(</span><span class="n">func</span><span class="p">);</span>			    <span class="o">//</span><span class="n">Get</span> <span class="n">a</span> <span class="n">pointer</span> <span class="n">to</span> <span class="n">the</span> <span class="n">functions</span> <span class="n">globals</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Once the <code>fast_function</code> method is setup, the code takes the very first branch since <code>argdefs == NULL &amp;&amp; co-&gt;co_argcount == n &amp;&amp; nk==0 &amp;&amp; co-&gt;co_flags == (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)</code> is a true statement. Notice we&rsquo;re checking to see how many arguments the Code Object has against how many arguments are on the stack; this is what makes this execution &lsquo;fast&rsquo; as everything that&rsquo;s needed to complete the call is actually already loaded up and ready to go and we can access it all by pointer arithmatic.</p>
+
+<p>Now we get to the bit of code that actually executes our function.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-C" data-lang="C"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-C" data-lang="C">        <span class="n">PyFrameObject</span> <span class="o">*</span><span class="n">f</span><span class="p">;</span>
+        <span class="p">...</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">PyFrame_New</span><span class="p">(</span><span class="n">tstate</span><span class="p">,</span> <span class="n">co</span><span class="p">,</span> <span class="n">globals</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+
+        <span class="n">fastlocals</span> <span class="o">=</span> <span class="n">f</span><span class="o">-&gt;</span><span class="n">f_localsplus</span><span class="p">;</span>
+        <span class="n">stack</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">pp_stack</span><span class="p">)</span> <span class="o">-</span> <span class="n">n</span><span class="p">;</span> 			<span class="c1">//Getting a direct pointer to the very first argument
+</span><span class="c1"></span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">Py_INCREF</span><span class="p">(</span><span class="o">*</span><span class="n">stack</span><span class="p">);</span>
+            <span class="n">fastlocals</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">*</span><span class="n">stack</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">retval</span> <span class="o">=</span> <span class="n">PyEval_EvalFrameEx</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>The interpreter creates a brand new Frame Object using the Code Object and Globals. It then gets a pointer to the locals for the frame, and for each of the arguments on the stack (there are 2 in our case) places them into this locals array. This action is what allows for the <code>LOAD_FAST</code> opcodes in the Code Object to do their thing, instead of a dictionary lookup we can make an atomic array read operation to get our arguments.</p>
+
+<p>Then the Frame Object is evaluated through calling the <code>PyEval_EvalFrameEx</code> method (which is the same method that&rsquo;s been evaluating the initial main Frame Object). Both arguments are added and the remaining value is left on top of the value stack through a <code>BINARY_ADD</code>. Notice that since we&rsquo;ve passed in the address of the value stack from the initial frame all of this is done on the exact same value stack. What essentially is happening here is the main frame transfers control of the stack to the new frame, and once this second frame finishes it returns control of the stack with modifications from executing the function code to the initial frame.</p>
+
+<p>The one opcode needing a bit of explanation here is the <code>RETURN_VALUE</code>, which grabs the top of the stack and executes a <code>fast_block_end</code> which kicks our result out to the caller. This is how the result of addition gets back out to our original frame.</p>
+
+<p>So now we find ourselves back in the <code>call_function</code> routine after returning the result from <code>fast_function</code>, the Interpreter executes this bit of code below to clean up the arguments and function still sitting on the value stack since they&rsquo;re no longer needed by simply running the stack pointer back to the pointer to the function we created earlier. This another reason why it was important to pass in the <code>stack_pointer</code> by reference, it gives the ability to do the cleanup work prior to returning to the <code>CALL_FUNCTION</code> opcode execution.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-C" data-lang="C"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-C" data-lang="C">    <span class="cm">/* Clear the stack of the function object.  Also removes
+</span><span class="cm">       the arguments in case they weren&#39;t consumed already
+</span><span class="cm">       (fast_function() and err_args() leave them on the stack).
+</span><span class="cm">     */</span>
+    <span class="k">while</span> <span class="p">((</span><span class="o">*</span><span class="n">pp_stack</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">pfunc</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="n">EXT_POP</span><span class="p">(</span><span class="o">*</span><span class="n">pp_stack</span><span class="p">);</span>
+        <span class="n">Py_DECREF</span><span class="p">(</span><span class="n">w</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Following this we execute the remaining opcodes after resetting the <code>stack_pointer</code> in <code>ceval.c</code> to the one returned to us by the reference passing in <code>call_function</code>. The remaining opcodes are fairly straight forward and not particularly interesting when it comes to function calls. We store our result onto the value stack, print out the value, load nothing onto the value stack and exit the frame!</p>
+
+<h1 id="extended-discussion-pyframeobject-vs-pyfunctionobject-vs-pycodeobject">Extended Discussion: PyFrameObject vs PyFunctionObject vs PyCodeObject</h1>
+
+<p>First of all, all three of these are PyObjects and are closely related to each other.
+PyFunctionObject is PyCodeObject plus some closure, and PyFrameObject is the runtime instance of a function.
+What really gets executed at the end, is the PyFrameObject.</p>
+
+<p>The most fundamental building block is the PyCodeObject.
+It looks like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-C" data-lang="C"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-C" data-lang="C"><span class="cm">/* Bytecode object */</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">PyObject_HEAD</span>
+    <span class="p">...</span>
+    <span class="n">PyObject</span> <span class="o">*</span><span class="n">co_code</span><span class="p">;</span>		<span class="cm">/* instruction opcodes */</span>
+    <span class="p">...</span>
+    <span class="n">PyObject</span> <span class="o">*</span><span class="n">co_varnames</span><span class="p">;</span>	<span class="cm">/* tuple of strings (local variable names) */</span>
+    <span class="p">...</span>                     <span class="c1">//Some other stuff
+</span><span class="c1"></span><span class="p">}</span> <span class="n">PyCodeObject</span><span class="p">;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Notice that to the PyCodeObject’s knowledge, there is nothing like global nor closure. All it knows at
+the moment is its local variables, even these local ones are not yet bound to some value, they are
+just symbols.</p>
+
+<p>The interesting part here is the <code>PyCodeObject.co_code</code>, which, in our case is the actual byte code
+of the <code>add</code> function. More precisely, the <code>co_varnames</code> are local symbols ( not necessaraly bound ).
+In our case are <code>x</code> and <code>y</code>.</p>
+
+<p>The concept of a PyFunctionObject builds upon the concept of a PyCodeObject. It is equivalently a CodeObject plus the context
+in which it is created. By context, I really mean <code>func_closure</code> and <code>func_globals</code>. Notice though,
+if we do not write nested <code>def some_function_name():</code> in the source, the <code>func_closure</code> is simply <code>NULL</code>.
+However, when we have nested functions or have a function as a return value, we will then invoke <code>MAKE_CLOSURE</code>
+to set the <code>func_closure</code> so as to remember the context in which the returned function is created.</p>
+
+<p>For instance, here is a block of code where the <code>fun</code> inside <code>f_factory</code> is returned, the <code>fun</code> here
+will have its <code>fun.func_closure</code> set with tuple <code>(x, y, z)</code> to the value when <code>fun</code> is created.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="k">def</span> <span class="nf">f_factory</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span>
+    <span class="k">def</span> <span class="nf">fun</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">z</span>
+    <span class="k">return</span> <span class="n">fun</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">f_factory</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">f_factory</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">x</span><span class="p">(),</span> <span class="n">y</span><span class="p">()</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Therefore, please remember that:
+<code>function = code + func_closure + func_global</code></p>
+
+<p>It looks like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-C" data-lang="C"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-C" data-lang="C"><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">PyObject_HEAD</span>
+    <span class="n">PyObject</span> <span class="o">*</span><span class="n">func_code</span><span class="p">;</span>	<span class="cm">/* A code object */</span>
+    <span class="n">PyObject</span> <span class="o">*</span><span class="n">func_globals</span><span class="p">;</span>	<span class="cm">/* A dictionary (other mappings won&#39;t do) */</span>
+    <span class="p">...</span>
+    <span class="n">PyObject</span> <span class="o">*</span><span class="n">func_closure</span><span class="p">;</span>	<span class="cm">/* NULL or a tuple of cell objects */</span>
+    <span class="p">...</span>
+<span class="p">}</span> <span class="n">PyFunctionObject</span><span class="p">;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Notice that here, <code>PyFunctionObject.func_global</code> kicks in. A Function Object knows what the global space is for some Code Object. Code Objects themselves need not worry about its globals.</p>
+
+<p>PyFrameObject is pretty much like the Functions and their contexts all together as a whole that gets executed by the Python VM.</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">olOwOlo</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2014-01-09</span>
+  </p>
+  
+  
+</div><footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/first/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">First</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://qiuqiyuan.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">olOwOlo</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
