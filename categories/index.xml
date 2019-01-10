@@ -11,20 +11,20 @@
     
     
     <item>
-      <title>Hexo</title>
-      <link>http://localhost:1313/categories/hexo/</link>
-      <pubDate>Fri, 18 Jul 2014 23:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/categories/hexo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Python</title>
       <link>http://localhost:1313/categories/python/</link>
       <pubDate>Sun, 02 Nov 2014 12:08:20 -0500</pubDate>
       
       <guid>http://localhost:1313/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tutorial</title>
+      <link>http://localhost:1313/categories/tutorial/</link>
+      <pubDate>Fri, 18 Jul 2014 23:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/categories/tutorial/</guid>
       <description></description>
     </item>
     
