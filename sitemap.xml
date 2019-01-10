@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/about/</loc>
+    <lastmod>2019-01-09T13:56:04-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/post/b2-visa-how-to/</loc>
     <lastmod>2014-11-20T20:57:52+00:00</lastmod>
     <changefreq>weekly</changefreq>

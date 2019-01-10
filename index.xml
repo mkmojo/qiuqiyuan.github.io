@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Wed, 09 Jan 2019 13:56:04 -0500</pubDate>
+      
+      <guid>http://localhost:1313/about/</guid>
+      <description>I like taking things apart and peek inside to see how they work.</description>
+    </item>
+    
+    <item>
       <title>B2-VISA-How-To</title>
       <link>http://localhost:1313/post/b2-visa-how-to/</link>
       <pubDate>Thu, 20 Nov 2014 20:57:52 +0000</pubDate>
