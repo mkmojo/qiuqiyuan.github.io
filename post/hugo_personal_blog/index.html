@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Hugo for Personal Website - A-ha - Michael&#39;s Personal Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="mqiu" /><meta name="description" content="I plan to write more in 2019. As the result I have resurrected my personal site.
+Previously I used Hexo &#43; DigitOcean VPS to serve my personal site. The solution went out of date because Dropbox decided to drop support for some Linux distro. Mine unfortunately is part of the deprecated list otherwise I have been happy of the set-up before.
+At first I wanted to reuse Hexo &#43; DigitOcean VPS solution. This old solution depends on Dropbox to monitor file changes and force nginx to serve generated static site. The key to reuse is to bring its Dropbox dependency up to date. This approach was proven to be too hard.
+Another approach, which is also a successful approach, is Hugo &#43; GitHub Pages. We will focus on this.
+" /><meta name="keywords" content="A-ha, personal, thoughts" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.53 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/hugo_personal_blog/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.bda73fe8.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Hugo for Personal Website" />
+<meta property="og:description" content="I plan to write more in 2019. As the result I have resurrected my personal site.
+
+Previously I used Hexo &#43; DigitOcean VPS to serve my personal site.
+The solution went out of date because Dropbox decided to drop support for some Linux distro. Mine unfortunately is part of the deprecated list otherwise I have been happy of the set-up before.
+
+At first I wanted to reuse Hexo &#43; DigitOcean VPS solution. This old solution depends on Dropbox to monitor file changes and force nginx to serve generated static site. The key to reuse is to bring its Dropbox dependency up to date. This approach was proven to be too hard.
+
+Another approach, which is also a successful approach, is Hugo &#43; GitHub Pages. We will focus on this." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/hugo_personal_blog/" /><meta property="article:published_time" content="2019-01-09T16:50:46-05:00"/>
+<meta property="article:modified_time" content="2019-01-09T16:50:46-05:00"/>
+
+<meta itemprop="name" content="Hugo for Personal Website">
+<meta itemprop="description" content="I plan to write more in 2019. As the result I have resurrected my personal site.
+
+Previously I used Hexo &#43; DigitOcean VPS to serve my personal site.
+The solution went out of date because Dropbox decided to drop support for some Linux distro. Mine unfortunately is part of the deprecated list otherwise I have been happy of the set-up before.
+
+At first I wanted to reuse Hexo &#43; DigitOcean VPS solution. This old solution depends on Dropbox to monitor file changes and force nginx to serve generated static site. The key to reuse is to bring its Dropbox dependency up to date. This approach was proven to be too hard.
+
+Another approach, which is also a successful approach, is Hugo &#43; GitHub Pages. We will focus on this.">
+
+
+<meta itemprop="datePublished" content="2019-01-09T16:50:46-05:00" />
+<meta itemprop="dateModified" content="2019-01-09T16:50:46-05:00" />
+<meta itemprop="wordCount" content="563">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hugo for Personal Website"/>
+<meta name="twitter:description" content="I plan to write more in 2019. As the result I have resurrected my personal site.
+
+Previously I used Hexo &#43; DigitOcean VPS to serve my personal site.
+The solution went out of date because Dropbox decided to drop support for some Linux distro. Mine unfortunately is part of the deprecated list otherwise I have been happy of the set-up before.
+
+At first I wanted to reuse Hexo &#43; DigitOcean VPS solution. This old solution depends on Dropbox to monitor file changes and force nginx to serve generated static site. The key to reuse is to bring its Dropbox dependency up to date. This approach was proven to be too hard.
+
+Another approach, which is also a successful approach, is Hugo &#43; GitHub Pages. We will focus on this."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Michael Qiu</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Michael Qiu</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Hugo for Personal Website</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-01-09 </span>
+        
+          <span class="more-meta"> 563 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#why-hugo">Why Hugo?</a></li>
+<li><a href="#why-github-pages">Why Github Pages?</a></li>
+<li><a href="#reference">Reference</a></li>
+<li><a href="#workflow">Workflow</a></li>
+<li><a href="#todo">TODO</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>I plan to write more in 2019. As the result I have resurrected my personal site.</p>
+
+<p>Previously I used Hexo + DigitOcean VPS to serve my personal site.
+The solution went out of date because Dropbox decided to drop support for some Linux distro. Mine unfortunately is part of the deprecated list otherwise I have been happy of the set-up before.</p>
+
+<p>At first I wanted to reuse Hexo + DigitOcean VPS solution. This old solution depends on Dropbox to monitor file changes and force nginx to serve generated static site. The key to reuse is to bring its Dropbox dependency up to date. This approach was proven to be too hard.</p>
+
+<p>Another approach, which is also a successful approach, is Hugo + GitHub Pages. We will focus on this.</p>
+
+<h2 id="why-hugo">Why Hugo?</h2>
+
+<p>I plan to create content includes which is a mixture of text, code, image, LaTex, chart, http links, and maybe even some JavaScript to offer interactivity.</p>
+
+<p>Static site generator fit my needs perfectly. On the market there are many popular ones like Hexo, Jekyll, and Hugo. Functionality wise all three works fine because they all support composing rich format in MarkDown.</p>
+
+<p>I picked Hugo because it is fast and have a simple mental model.
+Among these two, the latter characteristic close the deal for me.
+I would like something I can reason about two years from now. Hugo is simply a binary. It does not have endless dependencies and crazily dynamic host language (it is written in golang). Hexo and Jekyll in contrast are written in very dynamic languages like JavaScript and Ruby.</p>
+
+<blockquote>
+<p>I like simple things</p>
+</blockquote>
+
+<h2 id="why-github-pages">Why Github Pages?</h2>
+
+<p>Before the change, my personal site lives on DigitOcean.
+What I found out today is that bring back a machine to latest OS/software versions is really painful. I would like to avoid maintaining my own machine as much as possible.</p>
+
+<p>Github Pages offers such advantages.
+- I don&rsquo;t need to maintain my own machine, Github takes care of it.
+- It comes with version control by default. I get to travel between versions. I also get to see how my work evolves.</p>
+
+<h2 id="reference">Reference</h2>
+
+<p>I don&rsquo;t want to waste time repeating what has been said else where.
+Instead, I would mention things that I did differently during set-up.
+1. <a href="http://nanshu.wang/post/2015-01-31/">Hugo静态网站生成器中文教程</a>
+2. <a href="https://blog.olowolo.com/post/hugo-quick-start/">Hugo 从入门到会用</a>
+3. <a href="https://hgt312.github.io/post/other_note2/">Hugo建站踩坑记</a>
+4. <a href="https://www.jianshu.com/p/bdba60260f4d">使用 Hugo 搭建个人静态博客</a> &lt;&ndash; Talks about CI
+5. <a href="http://www.curtismlarson.com/blog/2015/04/12/github-pages-google-domains/">How to point a domain on Google Domains to GitHub pages</a></p>
+
+<p>Overall procedure should be:
+1. Create Github repos for both Hugo and Hugo/public.
+2. Configure Hugo to generate content in Hugo/public.
+3. Set up Github Pages to treat project repo as website.
+3. Set up Google Domains DNS, like in reference item 5.</p>
+
+<h2 id="workflow">Workflow</h2>
+
+<p>Once went through the references, we are ready to create contents.
+The flow should be</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">hugo new post/&lt;post_name&gt;.md
+hugo server -D --watch
+# maybe update sources in blog folder
+./deploy.py</pre></td></tr></table>
+</div>
+</div>
+<ol>
+<li>Spin up local server</li>
+<li>Write post</li>
+<li>Deploy to Github with script</li>
+</ol>
+
+<h2 id="todo">TODO</h2>
+
+<p>There are some smaller things I would like to tune:
+1. Create a more accurate about page.
+2. Learn how to change font.
+3. Learn how to add feature to the even theme.</p>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">mqiu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2019-01-09</span>
+  </p>
+  
+  
+</div><footer class="post-footer">
+      
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/five-minute-tutorial-for-python-functions/">
+            <span class="next-text nav-default">A Tutorial on Python Function Calls</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:qiuqiyuan&#43;www@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/qiuqiyuan" class="iconfont icon-github" title="github"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">mqiu</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

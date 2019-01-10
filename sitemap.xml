@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://localhost:1313/post/hugo_personal_blog/</loc>
+    <lastmod>2019-01-09T16:50:46-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/post/five-minute-tutorial-for-python-functions/</loc>
     <lastmod>2014-11-02T12:08:20-05:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -11,7 +18,7 @@
   
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2014-11-02T12:08:20-05:00</lastmod>
+    <lastmod>2019-01-09T16:50:46-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -24,6 +31,13 @@
   
   <url>
     <loc>http://localhost:1313/post/</loc>
+    <lastmod>2019-01-09T16:50:46-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/python/</loc>
     <lastmod>2014-11-02T12:08:20-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -31,13 +45,6 @@
   
   <url>
     <loc>http://localhost:1313/categories/python/</loc>
-    <lastmod>2014-11-02T12:08:20-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/python/</loc>
     <lastmod>2014-11-02T12:08:20-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>

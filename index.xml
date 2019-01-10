@@ -6,10 +6,26 @@
     <description>Recent content on A-ha - Michael&#39;s Personal Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 02 Nov 2014 12:08:20 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 09 Jan 2019 16:50:46 -0500</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo for Personal Website</title>
+      <link>http://localhost:1313/post/hugo_personal_blog/</link>
+      <pubDate>Wed, 09 Jan 2019 16:50:46 -0500</pubDate>
+      
+      <guid>http://localhost:1313/post/hugo_personal_blog/</guid>
+      <description>&lt;p&gt;I plan to write more in 2019. As the result I have resurrected my personal site.&lt;/p&gt;
+
+&lt;p&gt;Previously I used Hexo + DigitOcean VPS to serve my personal site.
+The solution went out of date because Dropbox decided to drop support for some Linux distro. Mine unfortunately is part of the deprecated list otherwise I have been happy of the set-up before.&lt;/p&gt;
+
+&lt;p&gt;At first I wanted to reuse Hexo + DigitOcean VPS solution. This old solution depends on Dropbox to monitor file changes and force nginx to serve generated static site. The key to reuse is to bring its Dropbox dependency up to date. This approach was proven to be too hard.&lt;/p&gt;
+
+&lt;p&gt;Another approach, which is also a successful approach, is Hugo + GitHub Pages. We will focus on this.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>A Tutorial on Python Function Calls</title>
