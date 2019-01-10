@@ -1,58 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on A-ha - Michael&#39;s Personal Blog</title>
-    <link>http://localhost:1313/post/</link>
-    <description>Recent content in Posts on A-ha - Michael&#39;s Personal Blog</description>
+    <title>Hexo on A-ha - Michael&#39;s Personal Blog</title>
+    <link>http://localhost:1313/categories/hexo/</link>
+    <description>Recent content in Hexo on A-ha - Michael&#39;s Personal Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 09 Jan 2019 16:50:46 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 18 Jul 2014 23:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/categories/hexo/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Hugo for Personal Website</title>
-      <link>http://localhost:1313/post/hugo_personal_blog/</link>
-      <pubDate>Wed, 09 Jan 2019 16:50:46 -0500</pubDate>
-      
-      <guid>http://localhost:1313/post/hugo_personal_blog/</guid>
-      <description>&lt;p&gt;I plan to write more in 2019. As the result I have resurrected my personal site.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>B2-VISA-How-To</title>
-      <link>http://localhost:1313/post/b2-visa-how-to/</link>
-      <pubDate>Thu, 20 Nov 2014 20:57:52 +0000</pubDate>
-      
-      <guid>http://localhost:1313/post/b2-visa-how-to/</guid>
-      <description>I plan to to have my parents visit me this following Febuary. Typically, Non-citizen need to have VISA to enter the US. To get VISA, we need to apply. Visitor Visa Official Guide According to the guide, the overall procedure will be: find the VISA type one needs to apply for; file online application; schedule an interview; pay application fee ;gather required document; attend the interview and finally get the</description>
-    </item>
-    
-    <item>
-      <title>A Tutorial on Python Function Calls</title>
-      <link>http://localhost:1313/post/five-minute-tutorial-for-python-functions/</link>
-      <pubDate>Sun, 02 Nov 2014 12:08:20 -0500</pubDate>
-      
-      <guid>http://localhost:1313/post/five-minute-tutorial-for-python-functions/</guid>
-      <description>&lt;p&gt;This tutorial gives you a quick overview of how Python handles function calls.&lt;/p&gt;
-
-&lt;p&gt;The Python program we are going to examine is:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;add&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;
-
-&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;add&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
-    </item>
     
     <item>
       <title>Hexo &#43; Dropbox on Ubuntu VPS</title>

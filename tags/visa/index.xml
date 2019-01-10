@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VISA on A-ha - Michael&#39;s Personal Blog</title>
+    <link>http://localhost:1313/tags/visa/</link>
+    <description>Recent content in VISA on A-ha - Michael&#39;s Personal Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 20 Nov 2014 20:57:52 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/visa/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>B2-VISA-How-To</title>
+      <link>http://localhost:1313/post/b2-visa-how-to/</link>
+      <pubDate>Thu, 20 Nov 2014 20:57:52 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/b2-visa-how-to/</guid>
+      <description>I plan to to have my parents visit me this following Febuary. Typically, Non-citizen need to have VISA to enter the US. To get VISA, we need to apply. Visitor Visa Official Guide According to the guide, the overall procedure will be: find the VISA type one needs to apply for; file online application; schedule an interview; pay application fee ;gather required document; attend the interview and finally get the</description>
+    </item>
+    
+  </channel>
+</rss>

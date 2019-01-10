@@ -10,8 +10,22 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/post/b2-visa-how-to/</loc>
+    <lastmod>2014-11-20T20:57:52+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/post/five-minute-tutorial-for-python-functions/</loc>
     <lastmod>2014-11-02T12:08:20-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/hexo-&#43;-dropbox-on-ubuntu-vps/</loc>
+    <lastmod>2014-07-18T23:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -25,6 +39,13 @@
   
   <url>
     <loc>http://localhost:1313/categories/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/hexo/</loc>
+    <lastmod>2014-07-18T23:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -53,6 +74,13 @@
   <url>
     <loc>http://localhost:1313/tags/</loc>
     <lastmod>2014-11-02T12:08:20-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/visa/</loc>
+    <lastmod>2014-11-20T20:57:52+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

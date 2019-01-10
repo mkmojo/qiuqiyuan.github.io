@@ -135,6 +135,27 @@
 
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/b2-visa-how-to/">B2-VISA-How-To</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2014-11-20 </span>
+      
+        <span class="more-meta"> 321 words </span>
+        <span class="more-meta"> 1 min read </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      I plan to to have my parents visit me this following Febuary. Typically, Non-citizen need to have VISA to enter the US. To get VISA, we need to apply. Visitor Visa Official Guide According to the guide, the overall procedure will be: find the VISA type one needs to apply for; file online application; schedule an interview; pay application fee ;gather required document; attend the interview and finally get the
+    </div>
+    <div class="read-more">
+      <a href="/post/b2-visa-how-to/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/five-minute-tutorial-for-python-functions/">A Tutorial on Python Function Calls</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2014-11-02 </span>
@@ -168,6 +189,305 @@
     </div>
     <div class="read-more">
       <a href="/post/five-minute-tutorial-for-python-functions/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/hexo-&#43;-dropbox-on-ubuntu-vps/">Hexo &#43; Dropbox on Ubuntu VPS</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2014-07-18 </span>
+      <div class="post-category">
+          <a href="/categories/hexo/"> Hexo </a>
+          </div>
+        <span class="more-meta"> 1545 words </span>
+        <span class="more-meta"> 4 mins read </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>The major reference for this tutorial is <a href="http://www.fanicy.com/2014/06/01/0001.hexowithvpsdropbox/">用Hexo+Vps搭建博客并用Dropbox同步自动发布</a>.<br />
+Hexo suits all my needs, it is a great tool. Therefore it is worth all the pain to set up.</p>
+
+<p>After some trial and fail, I finally figured out how to integrate my Digit Ocean CentOS VPS with Dropbox for Hexo to automate the publication process. With the help of this new setup, the Dropbox folder is the only thing I need to focus on. Whatever operation done there will be monitored by my VPS, publications will be automated by the script running on my server!</p>
+
+<p>##Overall logic:</p>
+
+<p>Run Dropbox on my VPS, set up a rule that monitors changes and trigger <code>hexo g</code> command to automatically publish changes to my site.</p>
+
+<p>##What do you need</p>
+
+<ul>
+<li>A VPS. I am using <a href="http://digitalocean.com">Digit Ocean</a>&rsquo;s 512MB 20GB VPS, which is $5/month.</li>
+<li>Dropbox account.</li>
+<li>A domain. I got mine from <a href="http://dot.tk">dot.tk</a>.</li>
+</ul>
+
+<p>##Install Nodejs
+We want to install Nodejs and have it run as a service from after boot.</p>
+
+<p>To install it, according to my first reference, we need to install epel first. I do not know why we need epel for Nodejs, if you do, please let me know.
+To check if you have epel installed already:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">yum repolist <span class="p">|</span> grep epel</code></pre></td></tr></table>
+</div>
+</div>
+<p>If you seee something like the following, it means you have it installed.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">* epel: mirror.prgmr.com
+epel             Extra Packages <span class="k">for</span> Enterprise Linux <span class="m">6</span> - x86_64           <span class="m">11</span>,022</code></pre></td></tr></table>
+</div>
+</div>
+<p>Otherwise you need to install epel.<br />
+Add epel key:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo rpm --import http://download-i2.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6</code></pre></td></tr></table>
+</div>
+</div>
+<p>Install the package<br />
+For 32bit:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo rpm -Uvh http://download-i2.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm</code></pre></td></tr></table>
+</div>
+</div>
+<p>For 64bit:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo rpm -Uvh http://download-i2.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm</code></pre></td></tr></table>
+</div>
+</div>
+<p>Also, we need <code>yum priority</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">yum install yum-priorities</code></pre></td></tr></table>
+</div>
+</div>
+<p>Use <code>yum repolist</code> again to make sure you have epel installed.</p>
+
+<p>Then wen can start installing nodejs.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo yum install nodejs npm --enablerepo<span class="o">=</span>epel</code></pre></td></tr></table>
+</div>
+</div>
+<p>##Setup Dropbox<br />
+We want to have dropbox running on our VPS so that files changed in <a href="Dropbox.com">Dropbox</a> folder will show up on our VPS.</p>
+
+<p>###Create User
+For safety reasons I chose to create a new user <strong>dbox</strong> in <strong>dbox</strong> group to run <a href="Dropbox.com">Dropbox</a>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">adduser dbox
+passwd dbox</code></pre></td></tr></table>
+</div>
+</div>
+<p>###Install Dropbox
+For 32bit users:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~ <span class="o">&amp;&amp;</span> wget -O - <span class="s2">&#34;https://www.dropbox.com/download?plat=lnx.x86&#34;</span> <span class="p">|</span> tar xzf -</code></pre></td></tr></table>
+</div>
+</div>
+<p>For 64bit users:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~ <span class="o">&amp;&amp;</span> wget -O - <span class="s2">&#34;https://www.dropbox.com/download?plat=lnx.x86_64&#34;</span> <span class="p">|</span> tar xzf -</code></pre></td></tr></table>
+</div>
+</div>
+<p>###Verify Installation
+After installation you will be given a link to verify your installation. You just need to copy and paste the link to a browser and do as instructed.</p>
+
+<p>Then you can kill the dropbox using <code>Ctrl + C</code>, we will choose what folder to synchronize using its official managment script.</p>
+
+<p>###Configure Dropbox
+Download offcial management script from the Internet.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">wget https://linux.dropbox.com/packages/dropbox.py</code></pre></td></tr></table>
+</div>
+</div>
+<p>Modify the permission:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">chmod +x dropbox.py</code></pre></td></tr></table>
+</div>
+</div>
+<p>Select folders to synchronize:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">./dropbox.py exclude add ~/Dropbox/Apps/ ~/Dropbox/back/ ~/Dropbox/Mycode/ ...</code></pre></td></tr></table>
+</div>
+</div>
+<p>##Start Dropbox Service
+Here I mainly used this <a href="http://salogs.com/2010/06/ubuntudropbox-e5-91-bd-e4-bb-a4-e8-a1-8c-e4-b8-8b-e5-ae-89-e8-a3-85-e4-b8-8e-e7-bb-b4-e6-8a-a4/">[Ubuntu]Dropbox命令行下安装与维护</a> as reference.
+In the post, there is a script for Fedora/CentOS users. The 60th line should be changed from</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">dbpid=<span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span>pgrep -u $dbuser dropbox<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>to</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">dbpid</span><span class="o">=</span><span class="sb">`</span>pgrep -u <span class="nv">$dbuser</span> dropbox<span class="sb">`</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Please pay attention to the <strong>backquote(`)</strong>, it is not single quote(&lsquo;). The backquote(`) is the key locates at the left top corner of laptop keyboard, the one next to number key 1; not the one on next to return key.</p>
+
+<p>Save the script as <code>/etc/init.d/dropbox</code> and create file <code>/etc/sysconfig/dropbox</code>.<br />
+The latter file should be empty before you add the following line:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">DROPBOX_USERS</span><span class="o">=</span><span class="s2">&#34;dbox some_other_user&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Change file permission:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">chmod <span class="m">0755</span> /etc/init.d/dropbox
+chmod <span class="m">0644</span> /etc/sysconfig/dropbox
+ls -l /etc/init.d/dropbox /etc/sysconfig/dropbox</code></pre></td></tr></table>
+</div>
+</div>
+<p>Set SElinux permission:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">chcon system_u:system_r:initr:c_exec_t /etc/init.d/dropbox
+chcon system_u:object_r:etc_t /etc/sysconfig/dropbox
+ls -lZ /etc/init.d/dropbox /etc/sysconfig/dropbox</code></pre></td></tr></table>
+</div>
+</div>
+<p>Add Dropboxo to autostart list:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">chkconfig dropbox on</code></pre></td></tr></table>
+</div>
+</div>
+<p>Use the following command to check if the service is on:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">chkconfig --list</code></pre></td></tr></table>
+</div>
+</div>
+<p>Later when you need to do service check, here are some sueful commands:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">service dropbox start
+service dropbox stop
+service dropbox restart
+service dropbox status</code></pre></td></tr></table>
+</div>
+</div>
+<p>You can check if Dropbox is going to start on boot now. Just reboot your system and run <code>service dropbox status</code>. If your setup is right, you will see somehting like this.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">dropboxd <span class="k">for</span> USER dbox: running <span class="o">(</span>pid <span class="m">904</span><span class="o">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Let&rsquo;s move on to installing hexo now.</p>
+
+<p>##Install Hexo<br />
+This part is very easy, just follow the official tutorial.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">npm install hexo -g  
+hexo init blog  
+<span class="nb">cd</span> blog  
+npm install  
+hexo server  </code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+    <div class="read-more">
+      <a href="/post/hexo-&#43;-dropbox-on-ubuntu-vps/" class="read-more-link">Read more..</a>
     </div>
   </div>
 </article>
