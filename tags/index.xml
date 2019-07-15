@@ -6,17 +6,17 @@
     <description>Recent content in Tags on A-ha - Michael&#39;s Personal Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 18 Jul 2014 23:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 20 Nov 2014 20:57:52 +0000</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hexo</title>
-      <link>http://localhost:1313/tags/hexo/</link>
-      <pubDate>Fri, 18 Jul 2014 23:00:00 +0000</pubDate>
+      <title>VISA</title>
+      <link>http://localhost:1313/tags/visa/</link>
+      <pubDate>Thu, 20 Nov 2014 20:57:52 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/hexo/</guid>
+      <guid>http://localhost:1313/tags/visa/</guid>
       <description></description>
     </item>
     
@@ -30,20 +30,20 @@
     </item>
     
     <item>
-      <title>VISA</title>
-      <link>http://localhost:1313/tags/visa/</link>
-      <pubDate>Thu, 20 Nov 2014 20:57:52 +0000</pubDate>
-      
-      <guid>http://localhost:1313/tags/visa/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>VM</title>
       <link>http://localhost:1313/tags/vm/</link>
       <pubDate>Sun, 02 Nov 2014 12:08:20 -0500</pubDate>
       
       <guid>http://localhost:1313/tags/vm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hexo</title>
+      <link>http://localhost:1313/tags/hexo/</link>
+      <pubDate>Fri, 18 Jul 2014 23:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/hexo/</guid>
       <description></description>
     </item>
     
