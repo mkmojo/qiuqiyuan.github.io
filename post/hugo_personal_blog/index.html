@@ -52,7 +52,7 @@
 
 <meta itemprop="datePublished" content="2019-01-09T16:50:46-05:00" />
 <meta itemprop="dateModified" content="2019-01-09T16:50:46-05:00" />
-<meta itemprop="wordCount" content="561">
+<meta itemprop="wordCount" content="588">
 
 
 
@@ -131,7 +131,7 @@
       <div class="post-meta">
         <span class="post-time"> 2019-01-09 </span>
         
-          <span class="more-meta"> 561 words </span>
+          <span class="more-meta"> 588 words </span>
           <span class="more-meta"> 2 mins read </span>
         
       </div>
@@ -148,6 +148,7 @@
 <li><a href="#why-github-pages">Why Github Pages?</a></li>
 <li><a href="#reference">Reference</a></li>
 <li><a href="#workflow">Workflow</a></li>
+<li><a href="#error">Error</a></li>
 <li><a href="#todo">TODO</a></li>
 </ul></li>
 </ul>
@@ -209,7 +210,7 @@ Instead, I would mention things that I did differently during set-up.</p>
 <h2 id="workflow">Workflow</h2>
 
 <p>Once went through the references, we are ready to create contents.
-The flow should be</p>
+The workflow is</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -230,6 +231,18 @@ hugo server -D --watch
 <li>Deploy to Github with script</li>
 </ol>
 
+<h2 id="error">Error</h2>
+
+<p>Run into a problem when themes <code>even</code> is not cloned locally into the themes/themesname.
+The solution is to clonet the theme locally</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git clone https://github.com/olOwOlo/hugo-theme-even themes/even</pre></td></tr></table>
+</div>
+</div>
 <h2 id="todo">TODO</h2>
 
 <p>There are some smaller things I would like to tune:</p>
